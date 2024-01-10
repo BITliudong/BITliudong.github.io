@@ -11,7 +11,7 @@ layout: feed
  <id>http://bitliudong.github.io/blog</id>
  <author>
    <name>Littlewood</name>
-<!--   <email>bitliudonghub@gmail.com</email>-->
+   <email>recursiveliudong@gmail.com</email>
  </author>
 
  {% for post in site.posts %}

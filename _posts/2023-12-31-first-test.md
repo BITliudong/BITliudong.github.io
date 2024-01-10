@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "first test"
+title: "first test v2"
 date: 2023-12-31
 ---
 
-test post
 
 - a
 - b 

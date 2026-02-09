@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
-    
+
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-  
+
   </head>
 
 
@@ -26,8 +28,63 @@
   <footer>
    <ul>
    <li><a href="https://github.com/BITliudong">github/littlewood</a></li>
+   <li><a href="#" class="back-to-top">↑ back to top</a></li>
+   <li><span class="probability-egg" title="抛硬币彩蛋">🪙</span></li>
    </ul>
+   <p class="footer-note">Built with <a href="https://jekyllrb.com/">Jekyll</a> • Hosted on <a href="https://pages.github.com/">GitHub Pages</a> • ∞</p>
   </footer>
+
+  <script>
+    // 回到顶部功能
+    document.addEventListener('DOMContentLoaded', function() {
+      var backToTop = document.querySelector('.back-to-top');
+      if (backToTop) {
+        backToTop.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+
+      // 概率彩蛋：抛硬币
+      var probabilityEgg = document.querySelector('.probability-egg');
+      if (probabilityEgg) {
+        probabilityEgg.addEventListener('click', function() {
+          // 抛硬币结果：0=正面，1=反面
+          var coinFlip = Math.random() < 0.5 ? '正面' : '反面';
+          var coinEmoji = coinFlip === '正面' ? '🪙' : '🪙'; // 可以使用不同emoji，但硬币两面一样
+
+          // 概率名言
+          var probabilityQuotes = [
+            "随机性不是噪声，而是创造性的源泉。",
+            "在足够长的时间尺度上，所有不可能的事件都会发生。",
+            "抛硬币时，正反面的概率各占50%，但命运却总是偏爱一面。",
+            "混沌是秩序的另一种表达方式。",
+            "唯一确定的就是不确定性本身。",
+            "概率论是生活的微积分。",
+            "随机漫步中的每一步都通向未知。",
+            "在量子世界中，硬币既是正面也是反面，直到你观察它。"
+          ];
+
+          var randomQuote = probabilityQuotes[Math.floor(Math.random() * probabilityQuotes.length)];
+
+          // 显示结果
+          var result = `抛硬币结果：${coinFlip} ${coinEmoji}\n\n${randomQuote}`;
+          alert(result);
+
+          // 添加简单的动画效果
+          probabilityEgg.style.transform = 'rotate(360deg)';
+          probabilityEgg.style.transition = 'transform 0.5s ease';
+
+          setTimeout(function() {
+            probabilityEgg.style.transform = 'rotate(0deg)';
+          }, 500);
+        });
+      }
+    });
+  </script>
   </body>
 
 </html>

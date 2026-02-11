@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -22,7 +26,7 @@ This is a minimal Jekyll blog hosted on GitHub Pages at `BITliudong.github.io`. 
   - `index.html`: Homepage with a brief blurb.
   - `about/index.html`: About page with contact links.
   - `cv/index.html`: Academic-style curriculum vitae with research profile.
-  - `blog/index.html`: Lists all posts using Liquid `{% for post in site.posts %}`.
+  - `blog/index.html`: Lists all posts using Liquid `{% raw %}{% for post in site.posts %}{% endraw %}`.
   - `blog/atom.xml`: Atom feed for the blog.
 - **Styling**: Single CSS file at `css/main.css` with basic typography and layout rules.
 - **Configuration**: `_config.yml` sets site name, markdown processor, and permalink style.
